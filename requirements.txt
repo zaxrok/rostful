@@ -1,4 +1,20 @@
 --index-url https://pypi.python.org/simple/
 --extra-index-url https://testpypi.python.org/simple/
 
+futures==3.0.2
+gunicorn==19.3.0
+tornado==4.0.2
+
+Flask==0.10.1
+Flask-Cors==2.0.1
+
+# -e git://github.com/asmodehn/flask-restful.git#egg=Flask-Restful
+Flask-Restful>=0.3.5
+
+Flask-SQLAlchemy==2.0
+
+
+-e git://github.com/asmodehn/pyros-setup.git@config_refactor#egg=pyros-setup
+-e git://github.com/asmodehn/pyros.git@config_refactor#egg=pyros
+
 -e .
