@@ -2,6 +2,9 @@
 build/
 bin/
 lib/
+.tox/
+.cache/
+.idea/
 *~
 *.pyc
 *.pyo

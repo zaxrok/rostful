@@ -26,7 +26,8 @@ def get_suffix(path):
 import simplejson
 import tblib
 
-from StringIO import StringIO
+from six import StringIO as StringIO
+from six import BytesIO as BytesIO
 
 
 ROS_MSG_MIMETYPE = 'application/vnd.ros.msg'

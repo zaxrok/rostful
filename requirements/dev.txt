@@ -1,0 +1,9 @@
+--index-url https://pypi.python.org/simple/
+# adding testpypi in case some packages are in test release
+--extra-index-url https://testpypi.python.org/simple/
+
+# dependencies packages from source
+# To use for development only
+
+-e git+https://github.com/pyros-dev/pyros.git#egg=pyros
+-e git+https://github.com/pyros-dev/pyros-rosinterface.git#egg=pyros_interfaces_ros

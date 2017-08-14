@@ -67,7 +67,9 @@ setup(
         ],
     },
     install_requires=[
-        'futures>=3.0.2',
+        # https://packaging.python.org/discussions/install-requires-vs-requirements/
+        'six',
+        'futures>=3.0.5',
         'Flask>=0.10.1',
         'Flask-Cors>=3.0.2',
         #'Flask-Script',
@@ -83,6 +85,7 @@ setup(
         'simplejson',
         'tblib>=1.2',
     ],
+    # TODO : pytest
     test_suite="nose.collector",
     tests_require=[
         'nose>=1.3.7'

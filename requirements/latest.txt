@@ -1,0 +1,15 @@
+--index-url https://pypi.python.org/simple/
+
+# gathering dependencies, latest from PyPI
+# adding here dependencies not listed in install_requires
+
+# nose
+# switching to because of nose annoying import problems
+pytest
+
+# To divert/prevent uninstalling attempt from tornado dependencies
+# since pip requirements install is ignoring already installed packages for catkin_pip
+# and these will be seen before by the installer for dependencies
+futures
+tornado
+
