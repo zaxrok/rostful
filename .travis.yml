@@ -13,6 +13,32 @@ python:
   #- pypy
   #- pypy3
 
+env:
+  # LTS
+  - ROS_DISTRO=indigo
+  - ROS_DISTRO=kinetic
+  # Non-LTS
+  - ROS_DISTRO=lunar
+
+matrix:
+  exclude:
+    # LTS indigo only support 2.7 and 3.4 (trusty's)
+    - python: 3.5
+      env: ROS_DISTRO=indigo
+    - python: 3.6
+      env: ROS_DISTRO=indigo
+    # LTS indigo only support 2.7 and 3.5 (xenial's)
+    - python: 3.4
+      env: ROS_DISTRO=kinetic
+    - python: 3.6
+      env: ROS_DISTRO=indigo
+
+    # Non-LTS
+    # no need to test obsolete python3 version
+    - python: 3.4
+      env: ROS_DISTRO=lunar
+
+
 before_install:
 
 install:

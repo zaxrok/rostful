@@ -5,7 +5,7 @@
 # PyPI packages
 
 pyros_setup>=0.2.1  # pyros should provide this...
-
+rospkg
 
 # ROS backported packages
 

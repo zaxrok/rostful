@@ -8,10 +8,10 @@
 six
 pyros_setup>=0.2.1  # pyros should provide this...
 
+rospkg
 
 
 # ROS packages
-
 pyros==0.4.1
 
 # TMP : because pyros declared dependency min version is wrong
