@@ -3,11 +3,11 @@
     "testSteps": [
         {
             "name": "string_pub_topic",
-            "apiUrl": "http://localhost:8000/ros/string_pub_topic",
+            "apiUrl": "http://localhost:5000/ros/string_pub_topic",
             "method": "get",
             "asserts": {
                 "headers": {
-                    "content-type": "exec \"application/json\" in value"
+                    "status": 200
                 },
                 "payload": {
                     "data": "string_pub message"
@@ -16,11 +16,11 @@
         },
         {
             "name": "string_pubnot_topic",
-            "apiUrl": "http://localhost:8000/ros/string_pubnot_topic",
+            "apiUrl": "http://localhost:5000/frontend/string_pubnot_topic",
             "method": "get",
             "asserts": {
                 "headers": {
-                    "status": 204
+                    "status": 200
                 }
             }
         },

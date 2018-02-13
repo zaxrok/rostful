@@ -12,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_pip_requirements(${CMAKE_CURRENT_SOURCE_DIR}/requirements.txt --ignore-installed)
 
 # defining current package as a package that should be managed by pip (not catkin - even though we make it usable with workspaces)
-catkin_pip_setup()
+# catkin_pip_setup()
 catkin_package()
 
 
@@ -23,6 +23,8 @@ if (CATKIN_ENABLE_TESTING)
     # Nose Tests
     ##############################################################################
 
-    catkin_add_nosetests(rostful/tests)
+    #catkin_add_nosetests(rostful/tests)
+    #catkin_add_nosetests(rostful/tests/testapp.py)
+	catkin_add_pytests(rostful/tests/testapp.py)
 
 endif()

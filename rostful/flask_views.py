@@ -38,8 +38,8 @@ import tblib
 
 from StringIO import StringIO
 
-from pyros.rosinterface import definitions
-from pyros import PyrosServiceTimeout, PyrosServiceNotFound
+from pyros_interfaces_ros import definitions
+from pyros.client import PyrosClient
 
 ROS_MSG_MIMETYPE = 'application/vnd.ros.msg'
 def ROS_MSG_MIMETYPE_WITH_TYPE(rostype):
@@ -79,7 +79,7 @@ from webargs.flaskparser import FlaskParser, use_kwargs
 parser = FlaskParser()
 
 import urllib
-from pyros import PyrosException
+from pyros_interfaces_common.exceptions import PyrosException
 
 
 ### EXCEPTION CLASSES
@@ -204,11 +204,11 @@ class FrontEnd(MethodView):
                     while not t.timed_out and (services is None or topics is None):
                         try:
                             services = self.node_client.services()
-                        except pyros.PyrosServiceTimeout:
+                        except PyrosClient.PyrosServiceTimeout:
                             services = None
                         try:
                             topics = self.node_client.topics()
-                        except pyros.PyrosServiceTimeout:
+                        except PyrosClient.PyrosServiceTimeout:
                             topics = None
 
                 if t.timed_out:

@@ -22,7 +22,7 @@ def roster():  #log, tc, ts, unknown_args):
     print ("Rester ARGV : {argv}".format(argv=sys.argv))
 
     # sleeping a bit to let the server wake up for testing
-    time.sleep(5)
+    time.sleep(1)
 
     rester.apirunner.run()
 

@@ -9,7 +9,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 import unittest
 import nose
 
-import pyros
+from pyros.server.ctx_server import pyros_ctx
 
 
 from rostful import app, set_pyros_client, ServiceNotFound
@@ -71,7 +71,7 @@ class TestAppPyros(TestAppNoPyros):
     # this will call setup and teardown
     def run(self, result=None):
         # argv is rosargs but these have no effect on client, so no need to pass anything here
-        with pyros.pyros_ctx(name='rostful', argv=[], mock_client=True) as node_ctx:
+        with pyros_ctx(name='rostful', argv=[], mock_client=True) as node_ctx:
             self.node_ctx = node_ctx
             set_pyros_client(self.node_ctx.client)
             super(TestAppPyros, self).run(result)

@@ -1,8 +1,8 @@
 <launch>
 
-  <node pkg="pyros" type="emptyService.py" name="empty_service"/>
-  <node pkg="pyros" type="triggerService.py" name="trigger_service"/>
-  <node pkg="pyros" type="slowService.py" name="slow_service"/>
+  <node pkg="pyros_test" type="emptyService.py" name="empty_service"/>
+  <node pkg="pyros_test" type="triggerService.py" name="trigger_service"/>
+  <node pkg="pyros_test" type="slowService.py" name="slow_service"/>
 
   <node pkg="rostful" type="devserver" name="rostful" args="-s flask">
     <param name="topics" value="[]" type="str" />
@@ -11,5 +11,4 @@
     <param name="enable_rocon" value="False" type="bool" />
   </node>
 
-  <test test-name="RosServices" pkg="rostful" type="roster" cwd="node" args="--tc=/home/alexv/ROS/rostful_ws/src/rostful/rostests/testRosServices.json"/>
 </launch>
